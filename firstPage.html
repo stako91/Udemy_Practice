@@ -7,15 +7,17 @@
 </head>
 <body>
 
-<h1>Sign In to see your marketable technology</h1>
+<!-- <h1>Sign In to see your marketable technology</h1>
 
-<!-- <form action="/login" method="POST">
+<form action="/login" method="POST">
     <label for="username">Username:</label> 
     <input id="username" type="email" placeholder="email" required>
     <label for="password">Password:</label> 
     <input id="password" type="password" placeholder="password" required>
     <input type="submit">
 </form> -->
+
+<!-- <h1>Do you want to eat a slice of cake?</h1>
 <form>
     <label for="yes">Yes</label>
     <input name="cognitiveChoice" id="yes" type="radio" value="yes">
@@ -31,6 +33,44 @@
     </select>
 
     <button>Go</button>
+</form> -->
+
+<h1>Register</h1>
+
+<form>
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" id="lastName" required>
+    <p>
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" id="male">
+
+        <label for="gender">Female</label>
+        <input type="radio" name="gender" id="female">
+
+        <label for="gender">Other</label>
+        <input type="radio" name="gender" id="other">
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" pattern=".{5,10}" required>
+    </p>
+    <p>
+        <label for="birthday">Birthday:</label>
+        <input type="date" name="birthday" id="birthday">
+    </p>
+    <p>
+        <label for="agreeConditions">I agree to the terms and conditions</label>
+        <input type="checkbox" name="agreeConditions" id="agreeConditions">
+    </p>
+
+
+    <button>Submit</button>
 </form>
 
 </body>
