@@ -26,8 +26,8 @@ p {
     background-color: yellow;
 }
 
-/*Make all inputs have a 3px red border*/
-input {
+/*Make all inputs (except the checkboxes) have a 3px red border*/
+input:not([type="checkbox"]) {
     border: 3px red solid;
 }
 
