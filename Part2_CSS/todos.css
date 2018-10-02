@@ -2,6 +2,6 @@
     border: 2px solid red;
 }
 
-.highlight {
-    text-decoration: line-through;
+ul li:hover {
+    background-color: rgba(0, 255, 55, 0.822);
 }
