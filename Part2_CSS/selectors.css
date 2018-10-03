@@ -3,7 +3,7 @@ DO NOT ALTER THE EXISTING HTML TO DO THIS.  WRITE ONLY CSS!
 
 /* Give the <body> element a background of #bdc3c7*/
 body {
-    background-color: #bdc3c7;
+    background: #bdc3c7;
 }
 
 /* Make the <h1> element #9b59b6*/
@@ -23,7 +23,7 @@ li {
 
 /*Change the background on every paragraph to be yellow*/
 p {
-    background-color: yellow;
+    background: yellow;
 }
 
 /*Make all inputs (except the checkboxes) have a 3px red border*/
@@ -33,7 +33,7 @@ input:not([type="checkbox"]) {
 
 /* Give everything with the class 'hello' a white background*/
 .hello {
-    background-color: #fffffe;
+    background: #fffffe;
 }
 
 /* Give the element with id 'special' a 2px solid blue border(pick your own rgb blue)*/
@@ -48,12 +48,12 @@ div p {
 
 /*Make only inputs with type 'text' have a gray background*/
 input:only-of-type(text) {
-    background-color: grey;
+    background: grey;
 }
 
 /* Give both <p>'s inside the 3rd <div> a pink background*/
 div:nth-of-type(3) p {
-    background-color: pink;
+    background: pink;
 }
 
 /* Give the 2nd <p> inside the 3rd <div> a 5px white border*/
