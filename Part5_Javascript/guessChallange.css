@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+}
+
+body {
+    /* background-image: url(https://images.unsplash.com/photo-1539979295193-ce3e38c97cd9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf6619f13b7d129e98f1a237045a2e47&auto=format&fit=crop&w=500&q=60); */
+    background-image: url(https://i2.wp.com/www.nustm.org/wp-content/uploads/2017/06/background-image-html.jpg?fit=1920%2C1200&ssl=1);
+    /* background-image: url(https://images.unsplash.com/photo-1539985965362-6d1f38ecd79b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1b1605f754112075c862bdee9b9741b1&auto=format&fit=crop&w=500&q=60); */
+    
+    background-size: cover;
+    background-position: center;
+    color: #f8f8f8 ;
+    margin-top: 2%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+hr {
+    width: 100%;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.content {
+    margin-top: 5%;
+}
+
+.tip {
+    text-align: right;
+}
+
+.info {
+    text-align: left;
+}
