@@ -1,6 +1,7 @@
-// Number between 1 to 10
-var secretNumber = Math.floor(Math.random() * 100) + 1;
+var secretNumber;
 var guessNumber;
+var timer;
+var startTime;
 
 // Check the guessNumber with secretNumber
 function check(e) {
@@ -10,9 +11,9 @@ function check(e) {
             document.getElementById("txtInfo").innerHTML = "GZ EMBER! A szám " + secretNumber + " volt.";
             stopGame();
         } else if (secretNumber - Number(guessNumber) < 0) {
-            document.getElementById("txtInfo").innerHTML = "Lower";
+            document.getElementById("txtInfo").innerHTML = "<i class=\"fas fa-arrow-down\"></i>Lower";
         } else {
-            document.getElementById("txtInfo").innerHTML = "Higher";
+            document.getElementById("txtInfo").innerHTML = "<i class=\"fas fa-arrow-up\"></i>Higher";
         }
 
         document.getElementById("txtTip").value = "";
@@ -23,23 +24,26 @@ function check(e) {
 // Timer
 function myTimer() {
     var d = new Date();
-    var t = d.toLocaleTimeString();
-    document.getElementById("timerText").innerHTML = t;
+    var t = -1 * (startTime - d.getTime()) / 1000;
+    document.getElementById("timerText").innerHTML = "" + t + "s";
 }
 
 // Stop timer
 function myStopFunction() {
-    clearInterval(myVar);
+    clearInterval(timer);
 }
 
 // Start game
 function startGame() {
+    startTime = new Date().getTime();
+    secretNumber = Math.floor(Math.random() * 10) + 1;
     document.getElementById("btnStart").disabled = true;
     document.getElementById("btnStop").disabled = false;
     document.getElementById("txtTip").disabled = false;
     document.getElementById("txtTip").focus();
     document.getElementById("txtInfo").innerHTML = "";
-    setInterval(myTimer, 10);
+    document.getElementById("previousTips").innerHTML = "";
+    timer = setInterval(myTimer, 100);
 }
 
 // Stop game
