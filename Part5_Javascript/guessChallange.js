@@ -1,3 +1,4 @@
+var maxNumber = 100;
 var secretNumber;
 var guessNumber;
 var timer;
@@ -36,7 +37,8 @@ function myStopFunction() {
 // Start game
 function startGame() {
     startTime = new Date().getTime();
-    secretNumber = Math.floor(Math.random() * 10) + 1;
+    secretNumber = Math.floor(Math.random() * maxNumber) + 1;
+    document.getElementById("maxNumber").innerHTML = "Your tip (1-" + maxNumber + ")";
     document.getElementById("btnStart").disabled = true;
     document.getElementById("btnStop").disabled = false;
     document.getElementById("txtTip").disabled = false;
