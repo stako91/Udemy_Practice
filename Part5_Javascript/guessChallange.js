@@ -47,12 +47,12 @@ function fillTopList() {
     toplistElement = [ { name: playerName, time: finishTime } ];
     toplist.push(toplistElement);
     toplist = toplist.sort(function(a,b){
-        return a.time - b.time;
+        return a[0].time - b[0].time;
     });
 
     toplistText = "<ol>";
     toplist.forEach(function(value) {
-        toplistText += "<li>" + value[0] + "," + value[1] + "</li>";
+        toplistText += "<li>" + value[0].name + "........." + value[0].time + "</li>";
     });
     toplistText += "</ol>";    
 
