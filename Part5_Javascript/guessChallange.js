@@ -3,6 +3,11 @@ var secretNumber;
 var guessNumber;
 var timer;
 var startTime;
+var finishTime;
+var playerName = "";
+var toplistText;
+var toplist = [];
+var toplistElement = [];
 
 // Check the guessNumber with secretNumber
 function check(e) {
@@ -10,6 +15,8 @@ function check(e) {
         guessNumber = document.getElementById("txtTip").value;
         if (secretNumber - Number(guessNumber) === 0) {
             document.getElementById("txtInfo").innerHTML = "GZ EMBER! A szám " + secretNumber + " volt.";
+            // Update toplist html div
+            fillTopList();
             stopGame();
         } else if (secretNumber - Number(guessNumber) < 0) {
             document.getElementById("txtInfo").innerHTML = "<i class=\"fas fa-arrow-down\"></i>Lower";
@@ -25,13 +32,31 @@ function check(e) {
 // Timer
 function myTimer() {
     var d = new Date();
-    var t = -1 * (startTime - d.getTime()) / 1000;
-    document.getElementById("timerText").innerHTML = "" + t + "s";
+    finishTime = -1 * (startTime - d.getTime()) / 1000;
+    document.getElementById("timerText").innerHTML = "" + finishTime + "s";
 }
 
 // Stop timer
 function myStopFunction() {
     clearInterval(timer);
+}
+
+// Update toplist
+function fillTopList() {
+    // Update toplist array:
+    toplistElement = [ { name: playerName, time: finishTime } ];
+    toplist.push(toplistElement);
+    toplist = toplist.sort(function(a,b){
+        return a.time - b.time;
+    });
+
+    toplistText = "<ol>";
+    toplist.forEach(function(value) {
+        toplistText += "<li>" + value[0] + "," + value[1] + "</li>";
+    });
+    toplistText += "</ol>";    
+
+    document.getElementById("toplist").innerHTML = toplistText;
 }
 
 // Start game
@@ -45,6 +70,8 @@ function startGame() {
     document.getElementById("txtTip").focus();
     document.getElementById("txtInfo").innerHTML = "";
     document.getElementById("previousTips").innerHTML = "";
+    playerName = document.getElementById("playerName").value;
+    document.getElementById("playerName").disabled = true;
     timer = setInterval(myTimer, 100);
 }
 
@@ -54,5 +81,8 @@ function stopGame() {
     document.getElementById("btnStart").disabled = false;
     document.getElementById("txtTip").disabled = true;
     document.getElementById("txtTip").value = "";
+    document.getElementById("playerName").disabled = false;
+
+    //Stop Timer
     myStopFunction();
 }
