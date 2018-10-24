@@ -44,15 +44,15 @@ function myStopFunction() {
 // Update toplist
 function fillTopList() {
     // Update toplist array:
-    toplistElement = [ { name: playerName, time: finishTime } ];
+    toplistElement = { name: playerName, time: finishTime };
     toplist.push(toplistElement);
     toplist = toplist.sort(function(a,b){
-        return a[0].time - b[0].time;
+        return a.time - b.time;
     });
 
     toplistText = "<ol>";
     toplist.forEach(function(value) {
-        toplistText += "<li>" + value[0].name + "........." + value[0].time + "</li>";
+        toplistText += "<li>" + value.name + "........." + value.time + "</li>";
     });
     toplistText += "</ol>";    
 
